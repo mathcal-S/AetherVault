@@ -1,0 +1,53 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- UNIVERSAL PREAMBLE BLOCK ---
+% Principle 1: Document Class is 'article' (appropriate for a paper/report)
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{fontspec} % Required for unicode-math and babel-font handling
+
+% Principle 2: Set Main Language and Font Loading
+\usepackage[english, bidi=basic, provide=*]{babel}
+\babelprovide[import, onchar=ids fonts]{english}
+% Set default/Latin font to Sans Serif in the main (rm) slot for a modern look
+\babelfont{rm}{Noto Sans}
+
+% Principle 3: Smart Package Loading (Necessary for the document's content)
+\usepackage{amsmath,amssymb,amsthm,mathtools} % Core math packages
+\usepackage{physics} % For physics-specific commands like \ket and \expval
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math} % Sets the math font
+\usepackage{xcolor}
+\usepackage{hyperref} % Keep hyperref last
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=red}
+\usepackage{booktabs} % For professional tables
+\usepackage{enumitem} % For list environments
+\usepackage{tikz} % For drawing diagrams
+\usetikzlibrary{decorations.pathreplacing}
+
+% --- DOCUMENT METADATA ---
+\title{\bfseries ESQET-UIFT v5.1: Exact Derivation of the Sterile Neutrino Mass\\
+       and Asymptotic Safety of the Gravitational + Scalar Sector\\
+       (No Free Parameters — Full Closure November 21, 2025)}
+\author{Marco Antônio Rocha Jr.}
+\date{November 21, 2025 — 03:07 AM MST}
+
+\begin{document}
+
+\maketitle % Prints the title, author, and date
+
+% --- MAIN DOCUMENT BODY: INPUTTING SEPARATE CHAPTER FILES ---
+% These files must be located in the 'src/' subdirectory.
+
+\input{src/01_introduction.tex} % Title, Abstract, and start of VEV
+\input{src/02_vev.tex}         % Conclusion of VEV and start of Sterile Neutrino
+\input{src/03_neutrino.tex}    % Conclusion of Sterile Neutrino and start of Asymptotic Safety
+\input{src/04_safety.tex}      % Conclusion of Asymptotic Safety and Conclusion
+
+% --- APPENDIX AND BIBLIOGRAPHY ---
+\input{src/99_appendix.tex}    % Appendix A: $\phi$-Identity Derivations
+
+% Ensure you have a bib.bib file with references.
+\bibliographystyle{unsrt}      % A common style that lists entries in order of appearance
+\bibliography{bib}             % Looks for 'bib.bib'
+
+\end{document}
