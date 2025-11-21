@@ -1,4 +1,4 @@
-  THE THEORY OF EVERYTHING 
+    THE THEORY OF EVERYTHING 
 
 # ESQET-UIFT v5.1: $\phi$-Identities in Quantum Gravity
 
